@@ -36,13 +36,8 @@ const Navigation = () => {
               <img src="/logo.png" alt="PRAESIDIUM" className="h-7 w-7" />
             </div>
             <div>
-<<<<<<< Updated upstream
-              <h1 className="text-stone-white font-bold text-xl tracking-wide">Praesidium</h1>
-              <p className="text-stone-white/70 text-sm font-medium">Secure E-Governance</p>
-=======
               <h1 className="text-white font-bold text-xl tracking-wide">PRAESIDIUM</h1>
               <p className="text-gray-300 text-sm font-medium">Quantum E-Governance</p>
->>>>>>> Stashed changes
             </div>
           </div>
 

@@ -1,9 +1,5 @@
 {
-<<<<<<< Updated upstream
-  "name": "praesidium-governance",
-=======
   "name": "praesidium-quantum-governance",
->>>>>>> Stashed changes
   "private": true,
   "version": "1.0.0",
   "type": "module",
