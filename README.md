@@ -31,20 +31,15 @@
 
 ## 🎯 Demo
 
-### 🖥️ Desktop Experience
-<!-- Replace with actual screenshot -->
-![Desktop Demo](https://via.placeholder.com/800x450/1a1a2e/00d4ff?text=Desktop+Demo+Screenshot)
 
-### 📱 Mobile Experience  
-<!-- Replace with actual screenshot -->
-![Mobile Demo](https://via.placeholder.com/400x600/1a1a2e/00d4ff?text=Mobile+Demo+Screenshot)
 
 ### 🎨 User Interface Highlights
 <!-- Replace with actual screenshots -->
 <div align="center">
-  <img src="https://via.placeholder.com/250x150/1a1a2e/00d4ff?text=Hero+Section" alt="Hero Section" width="250">
-  <img src="https://via.placeholder.com/250x150/1a1a2e/00d4ff?text=Services+Overview" alt="Services" width="250">
-  <img src="https://via.placeholder.com/250x150/1a1a2e/00d4ff?text=Dashboard" alt="Dashboard" width="250">
+
+  ![h1](https://github.com/user-attachments/assets/5e51d88e-aa46-437b-8997-bb41434a520c)
+  ![h2](https://github.com/user-attachments/assets/077c5967-1b90-42e1-b16e-6807105b79a1)
+  ![h3](https://github.com/user-attachments/assets/463893be-43b9-4ba7-9db3-5678e5176a36)
 </div>
 
 ---
