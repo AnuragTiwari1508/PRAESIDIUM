@@ -47,6 +47,18 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // Stone Theme Extensions
+        stone: {
+          light: "hsl(var(--stone-light))",
+          medium: "hsl(var(--stone-medium))",
+          dark: "hsl(var(--stone-dark))",
+          darker: "hsl(var(--stone-darker))",
+          white: "hsl(var(--stone-white))",
+        },
+        quantum: {
+          blue: "hsl(var(--quantum-blue))",
+          emerald: "hsl(var(--quantum-emerald))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -57,6 +69,16 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+      },
+      backgroundImage: {
+        'gradient-stone': 'var(--gradient-stone)',
+        'gradient-quantum': 'var(--gradient-quantum)',
+        'gradient-secure': 'var(--gradient-secure)',
+      },
+      boxShadow: {
+        'stone': 'var(--shadow-stone)',
+        'quantum': 'var(--shadow-quantum)',
+        'glow': 'var(--shadow-glow)',
       },
       borderRadius: {
         lg: "var(--radius)",
