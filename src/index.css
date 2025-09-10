@@ -109,6 +109,18 @@ All colors MUST be HSL.
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
+    
+    /* Dark theme specific colors */
+    --stone-light: 220 13% 18%;
+    --stone-medium: 215 25% 15%;
+    --stone-dark: 210 40% 8%;
+    --stone-darker: 222.2 84% 4.9%;
+    --quantum-blue: 217 91% 60%;
+    --quantum-emerald: 142 76% 36%;
+    --stone-white: 210 40% 98%;
+    --professional-blue: 224 76% 48%;
+    --professional-navy: 224 39% 24%;
+    
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;

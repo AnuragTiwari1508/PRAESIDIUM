@@ -1,0 +1,41 @@
+# Development files
+.env.local
+.env.development
+.env.test
+
+# Build files
+node_modules
+.next
+.nuxt
+.vscode
+.idea
+
+# Test files
+__tests__
+*.test.*
+*.spec.*
+test/
+tests/
+
+# Documentation
+README.md
+CHANGELOG.md
+docs/
+
+# Git
+.git
+.gitignore
+
+# Package manager files
+pnpm-lock.yaml
+yarn.lock
+package-lock.json
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

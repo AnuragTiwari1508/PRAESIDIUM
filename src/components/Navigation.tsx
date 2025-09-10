@@ -26,18 +26,23 @@ const Navigation = () => {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'nav-professional shadow-elevated py-2' : 'nav-professional py-4'
+      isScrolled ? 'bg-slate-900/95 backdrop-blur-md shadow-lg shadow-emerald-500/10 py-2' : 'bg-slate-950/90 backdrop-blur-md py-4'
     }`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Enhanced Logo */}
           <div className="flex items-center space-x-4">
-            <div className="bg-gradient-quantum p-3 rounded-xl shadow-quantum animate-glow">
-              <Shield className="h-7 w-7 text-white" />
+            <div className="bg-gradient-to-r from-emerald-500 to-blue-500 p-3 rounded-xl shadow-lg shadow-emerald-500/25 animate-pulse">
+              <img src="/logo.png" alt="PRAESIDIUM" className="h-7 w-7" />
             </div>
             <div>
+<<<<<<< Updated upstream
               <h1 className="text-stone-white font-bold text-xl tracking-wide">Praesidium</h1>
               <p className="text-stone-white/70 text-sm font-medium">Secure E-Governance</p>
+=======
+              <h1 className="text-white font-bold text-xl tracking-wide">PRAESIDIUM</h1>
+              <p className="text-gray-300 text-sm font-medium">Quantum E-Governance</p>
+>>>>>>> Stashed changes
             </div>
           </div>
 
@@ -49,9 +54,9 @@ const Navigation = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="flex items-center space-x-2 text-stone-white/80 hover:text-stone-white px-4 py-2 rounded-lg transition-all duration-300 group hover:bg-stone-white/10"
+                  className="flex items-center space-x-2 text-gray-300 hover:text-white px-4 py-2 rounded-lg transition-all duration-300 group hover:bg-emerald-500/20 border border-transparent hover:border-emerald-500/30"
                 >
-                  <Icon className="h-4 w-4 group-hover:text-accent transition-all duration-300 group-hover:scale-110" />
+                  <Icon className="h-4 w-4 group-hover:text-emerald-400 transition-all duration-300 group-hover:scale-110" />
                   <span className="font-medium">{item.name}</span>
                 </a>
               );
