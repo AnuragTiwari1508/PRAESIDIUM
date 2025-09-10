@@ -8,12 +8,12 @@ echo "🧹 Cleaning previous builds..."
 rm -rf dist/
 
 # Install dependencies
-echo "📦 Installing dependencies with pnpm..."
-pnpm install
+echo "📦 Installing dependencies with npm..."
+npm install
 
 # Build for production
 echo "🔨 Building for production..."
-pnpm build
+npm run build
 
 # Check if build was successful
 if [ $? -eq 0 ]; then
