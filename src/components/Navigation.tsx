@@ -36,7 +36,7 @@ const Navigation = () => {
               <Shield className="h-7 w-7 text-white" />
             </div>
             <div>
-              <h1 className="text-stone-white font-bold text-xl tracking-wide">QuantumGov</h1>
+              <h1 className="text-stone-white font-bold text-xl tracking-wide">Praesidium</h1>
               <p className="text-stone-white/70 text-sm font-medium">Secure E-Governance</p>
             </div>
           </div>

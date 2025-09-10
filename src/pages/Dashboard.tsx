@@ -46,7 +46,7 @@ const Dashboard = () => {
               </div>
               <div>
                 <h1 className="text-stone-white font-bold text-lg">
-                  <a href="/" className="hover:text-accent transition-colors">QuantumGov</a>
+                  <a href="/" className="hover:text-accent transition-colors">Praesidium</a>
                 </h1>
                 <p className="text-stone-white/60 text-xs">Citizen Dashboard</p>
               </div>

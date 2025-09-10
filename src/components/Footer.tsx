@@ -17,7 +17,7 @@ const Footer = () => {
 
   const contact = [
     { icon: Phone, text: '+91 1800-GOV-HELP', href: 'tel:+911800468435' },
-    { icon: Mail, text: 'support@quantumgov.in', href: 'mailto:support@quantumgov.in' },
+    { icon: Mail, text: 'support@praesidium.gov.in', href: 'mailto:support@praesidium.gov.in' },
     { icon: MapPin, text: 'New Delhi, India', href: '#location' },
   ];
 
@@ -32,7 +32,7 @@ const Footer = () => {
                 <Shield className="h-6 w-6 text-white" />
               </div>
               <div>
-                <h3 className="text-xl font-bold">QuantumGov</h3>
+                <h3 className="text-xl font-bold">Praesidium</h3>
                 <p className="text-stone-white/60 text-sm">Secure E-Governance</p>
               </div>
             </div>
@@ -108,7 +108,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-center md:text-left mb-4 md:mb-0">
               <p className="text-stone-white/60 text-sm">
-                © 2024 QuantumGov. All rights reserved. | Government of India
+                © 2024 Praesidium. All rights reserved. | Government of India
               </p>
               <p className="text-stone-white/40 text-xs mt-1">
                 Built with post-quantum cryptography for citizen security
