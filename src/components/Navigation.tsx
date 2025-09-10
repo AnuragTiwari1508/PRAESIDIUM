@@ -1,9 +1,10 @@
-import { useState } from 'react';
-import { Menu, X, Shield, Vote, CreditCard, User, Eye, Info, Phone } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Menu, X, Shield, Vote, CreditCard, User, Eye, Info, Phone, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const navItems = [
     { name: 'Services', href: '#services', icon: Shield },
@@ -15,73 +16,97 @@ const Navigation = () => {
     { name: 'Contact', href: '#contact', icon: Phone },
   ];
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-secondary/95 backdrop-blur-sm border-b border-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      isScrolled ? 'nav-professional shadow-elevated py-2' : 'nav-professional py-4'
+    }`}>
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <div className="bg-gradient-quantum p-2 rounded-lg">
-              <Shield className="h-6 w-6 text-white" />
+          {/* Enhanced Logo */}
+          <div className="flex items-center space-x-4">
+            <div className="bg-gradient-quantum p-3 rounded-xl shadow-quantum animate-glow">
+              <Shield className="h-7 w-7 text-white" />
             </div>
             <div>
-              <h1 className="text-stone-white font-bold text-lg">QuantumGov</h1>
-              <p className="text-stone-white/60 text-xs">Secure E-Governance</p>
+              <h1 className="text-stone-white font-bold text-xl tracking-wide">QuantumGov</h1>
+              <p className="text-stone-white/70 text-sm font-medium">Secure E-Governance</p>
             </div>
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          {/* Enhanced Desktop Navigation */}
+          <div className="hidden lg:flex items-center space-x-1">
             {navItems.map((item) => {
               const Icon = item.icon;
               return (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="flex items-center space-x-2 text-stone-white/80 hover:text-stone-white transition-colors duration-200 group"
+                  className="flex items-center space-x-2 text-stone-white/80 hover:text-stone-white px-4 py-2 rounded-lg transition-all duration-300 group hover:bg-stone-white/10"
                 >
-                  <Icon className="h-4 w-4 group-hover:text-accent transition-colors" />
-                  <span>{item.name}</span>
+                  <Icon className="h-4 w-4 group-hover:text-accent transition-all duration-300 group-hover:scale-110" />
+                  <span className="font-medium">{item.name}</span>
                 </a>
               );
             })}
-            <Button className="btn-quantum ml-4" onClick={() => window.location.href = '/dashboard'}>
-              Access Dashboard
-            </Button>
+            <div className="ml-6 flex items-center space-x-3">
+              <Button 
+                variant="outline" 
+                className="btn-professional text-stone-white border-stone-white/30 hover:border-stone-white"
+              >
+                Login
+              </Button>
+              <Button className="btn-quantum" onClick={() => window.location.href = '/dashboard'}>
+                Dashboard
+              </Button>
+            </div>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
+          {/* Enhanced Mobile menu button */}
+          <div className="lg:hidden">
             <Button
               variant="ghost"
               size="sm"
               onClick={() => setIsOpen(!isOpen)}
-              className="text-stone-white"
+              className="text-stone-white hover:bg-stone-white/10 p-3"
             >
-              {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Enhanced Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden bg-secondary border-t border-border">
-            <div className="px-2 pt-2 pb-3 space-y-1">
+          <div className="lg:hidden nav-professional border-t border-stone-white/10 mt-4">
+            <div className="px-4 pt-4 pb-6 space-y-3">
               {navItems.map((item) => {
                 const Icon = item.icon;
                 return (
                   <a
                     key={item.name}
                     href={item.href}
-                    className="flex items-center space-x-3 text-stone-white/80 hover:text-stone-white px-3 py-2 rounded-md transition-colors"
+                    className="flex items-center space-x-4 text-stone-white/80 hover:text-stone-white px-4 py-3 rounded-lg transition-all duration-300 hover:bg-stone-white/10"
                     onClick={() => setIsOpen(false)}
                   >
-                    <Icon className="h-4 w-4" />
-                    <span>{item.name}</span>
+                    <Icon className="h-5 w-5" />
+                    <span className="font-medium">{item.name}</span>
                   </a>
                 );
               })}
-              <div className="pt-2">
+              <div className="pt-4 space-y-3">
+                <Button 
+                  variant="outline" 
+                  className="btn-professional w-full text-stone-white border-stone-white/30"
+                >
+                  Login
+                </Button>
                 <Button className="btn-quantum w-full" onClick={() => window.location.href = '/dashboard'}>
                   Access Dashboard
                 </Button>

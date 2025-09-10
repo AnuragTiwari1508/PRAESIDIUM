@@ -38,23 +38,29 @@ All colors MUST be HSL.
     --ring: 217 89% 51%;
 
     /* Stone Theme Custom Variables */
-    --stone-light: 0 0% 96%;
-    --stone-medium: 0 0% 90%;
-    --stone-dark: 0 0% 18%;
-    --stone-darker: 0 0% 23%;
+    --stone-light: 0 0% 97%;
+    --stone-medium: 0 0% 92%;
+    --stone-dark: 0 0% 15%;
+    --stone-darker: 0 0% 20%;
     --quantum-blue: 217 89% 51%;
     --quantum-emerald: 145 63% 49%;
-    --stone-white: 0 0% 98%;
+    --stone-white: 0 0% 99%;
+    --professional-blue: 224 76% 48%;
+    --professional-navy: 224 39% 24%;
     
-    /* Gradients */
+    /* Professional Gradients */
     --gradient-stone: linear-gradient(135deg, hsl(var(--stone-light)), hsl(var(--stone-medium)));
     --gradient-quantum: linear-gradient(135deg, hsl(var(--quantum-blue)), hsl(var(--quantum-emerald)));
-    --gradient-secure: linear-gradient(90deg, hsl(var(--stone-dark)), hsl(var(--stone-darker)));
+    --gradient-secure: linear-gradient(135deg, hsl(var(--stone-dark)), hsl(var(--professional-navy)));
+    --gradient-professional: linear-gradient(135deg, hsl(var(--professional-blue)), hsl(var(--professional-navy)));
+    --gradient-header: linear-gradient(180deg, hsl(var(--stone-dark)), hsl(var(--stone-darker)));
     
-    /* Shadows */
-    --shadow-stone: 0 4px 20px hsl(var(--stone-dark) / 0.1);
-    --shadow-quantum: 0 8px 32px hsl(var(--quantum-blue) / 0.2);
-    --shadow-glow: 0 0 24px hsl(var(--accent) / 0.3);
+    /* Professional Shadows */
+    --shadow-stone: 0 8px 32px hsl(var(--stone-dark) / 0.08);
+    --shadow-quantum: 0 12px 48px hsl(var(--quantum-blue) / 0.15);
+    --shadow-glow: 0 0 32px hsl(var(--accent) / 0.25);
+    --shadow-professional: 0 4px 24px hsl(var(--professional-navy) / 0.12);
+    --shadow-elevated: 0 16px 64px hsl(var(--stone-dark) / 0.1);
 
     --radius: 0.5rem;
 
@@ -124,36 +130,73 @@ All colors MUST be HSL.
   }
 }
 
-/* Stone Theme Custom Utilities */
+/* Professional Government Theme Utilities */
 @layer components {
   .btn-quantum {
-    @apply bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-300;
-    box-shadow: var(--shadow-stone);
+    @apply bg-primary text-primary-foreground px-8 py-4 rounded-lg font-semibold tracking-wide transition-all duration-300 border-0;
+    box-shadow: var(--shadow-professional);
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--professional-blue)));
   }
   
   .btn-quantum:hover {
     box-shadow: var(--shadow-quantum);
-    transform: translateY(-2px);
+    transform: translateY(-3px) scale(1.02);
+    background: linear-gradient(135deg, hsl(var(--professional-blue)), hsl(var(--primary)));
   }
   
   .btn-secure {
-    @apply bg-accent text-accent-foreground px-6 py-3 rounded-lg font-medium transition-all duration-300;
+    @apply bg-accent text-accent-foreground px-8 py-4 rounded-lg font-semibold tracking-wide transition-all duration-300 border-0;
+    box-shadow: var(--shadow-professional);
+    background: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--quantum-emerald)));
   }
   
   .btn-secure:hover {
     box-shadow: var(--shadow-glow);
-    transform: translateY(-1px);
+    transform: translateY(-3px) scale(1.02);
+  }
+  
+  .btn-professional {
+    @apply px-8 py-4 rounded-lg font-semibold tracking-wide transition-all duration-300 border-2;
+    background: transparent;
+    border-color: hsl(var(--primary));
+    color: hsl(var(--primary));
+  }
+  
+  .btn-professional:hover {
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    box-shadow: var(--shadow-professional);
+    transform: translateY(-2px);
   }
   
   .card-stone {
-    @apply bg-card border border-border rounded-xl p-6 transition-all duration-300;
+    @apply bg-card border border-border rounded-2xl p-8 transition-all duration-500;
     box-shadow: var(--shadow-stone);
-    background: hsl(var(--card));
+    background: linear-gradient(135deg, hsl(var(--card)), hsl(var(--stone-white)));
   }
   
   .card-stone:hover {
-    box-shadow: var(--shadow-quantum);
-    transform: translateY(-2px);
+    box-shadow: var(--shadow-elevated);
+    transform: translateY(-4px);
+  }
+  
+  .card-professional {
+    @apply bg-card border-0 rounded-2xl p-8 transition-all duration-500;
+    box-shadow: var(--shadow-professional);
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+  
+  .card-professional:hover {
+    box-shadow: var(--shadow-elevated);
+    transform: translateY(-3px);
+    border-color: hsl(var(--primary) / 0.3);
+  }
+  
+  .nav-professional {
+    background: var(--gradient-header);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid hsl(var(--stone-white) / 0.1);
   }
   
   .gradient-stone {
@@ -168,6 +211,14 @@ All colors MUST be HSL.
     background: var(--gradient-secure);
   }
   
+  .gradient-professional {
+    background: var(--gradient-professional);
+  }
+  
+  .gradient-header {
+    background: var(--gradient-header);
+  }
+  
   .text-quantum {
     @apply text-primary;
   }
@@ -177,7 +228,15 @@ All colors MUST be HSL.
   }
   
   .animate-glow {
-    animation: glow 2s ease-in-out infinite alternate;
+    animation: glow 3s ease-in-out infinite alternate;
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-scale {
+    animation: scale 4s ease-in-out infinite;
   }
 }
 
@@ -195,11 +254,29 @@ All colors MUST be HSL.
   }
 }
 
+/* Professional Animations */
 @keyframes glow {
   from {
-    box-shadow: 0 0 10px hsl(var(--accent) / 0.2);
+    box-shadow: 0 0 15px hsl(var(--accent) / 0.2);
   }
   to {
-    box-shadow: 0 0 20px hsl(var(--accent) / 0.4);
+    box-shadow: 0 0 30px hsl(var(--accent) / 0.4);
   }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-10px) rotate(1deg); }
+  66% { transform: translateY(5px) rotate(-1deg); }
+}
+
+@keyframes scale {
+  0%, 100% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.1); opacity: 1; }
+}
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
